@@ -32,5 +32,5 @@ const winner = function whoWins() {
 console.log(
     `You chose ${userChoice}. I chose ${
         (computerChoice, options[computerChoice])
-    }. ${winner}`
+    }. ${winner()}`
 );

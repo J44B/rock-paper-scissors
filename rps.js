@@ -14,9 +14,9 @@ const computerChoice = [Math.floor(Math.random() * options.length)];
 
 // Define who is the winner
 const winner = function whoWins() {
-    // Check for tie
+    // Check for draw
     if (computerChoice === userChoice) {
-        return "It's a tie.";
+        return "It's a draw.";
         // Check for winner
     } else if (
         (userChoice === "Rock" && computerChoice === "Scissors") ||

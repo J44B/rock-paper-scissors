@@ -9,6 +9,7 @@ const options = ['Rock', 'Paper', 'Scissors'];
 const userChoice = process.argv[2];
 
 // Analyse user input
+// SHOULD USE INCLUDES
 const validChoice = function analyseUserChoice() {
   if (
     userChoice === 'Rock' ||

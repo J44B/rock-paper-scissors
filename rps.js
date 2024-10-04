@@ -9,17 +9,17 @@ const options = ['Rock', 'Paper', 'Scissors'];
 const userChoice = process.argv[2];
 
 // Analyse user input
-function checkUserInput() {
-  // Check for number
+const validChoice = function analyseUserChoice() {
   if (
     userChoice !== 'Rock' ||
     userChoice !== 'Paper' ||
-    userChoice !== 'Scissors'
+    userChoice !== 'Sccissors'
   ) {
-    return "Your choice is not a valid option. Please choose 'Rock', 'Paper' or 'Scissors'. ";
+    return "No valid input. Please choose 'Rock, 'Paper' or 'Scissors'.";
+  } else {
+    return true;
   }
-}
-checkUserInput();
+};
 
 // get random option for computer
 
@@ -43,4 +43,12 @@ const winner = function whoWins() {
 };
 
 // Final output
-console.log(`You chose ${userChoice}. I chose ${computerChoice}. ${winner()}`);
+function output() {
+  if (validChoice === true) {
+    console.log(
+      `You chose ${userChoice}. I chose ${computerChoice}. ${winner()}`
+    );
+  } else {
+    console.log(validChoice);
+  }
+}

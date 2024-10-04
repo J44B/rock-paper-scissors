@@ -7,8 +7,20 @@ const options = ['Rock', 'Paper', 'Scissors'];
 // Get user input and slice array
 
 const userChoice = process.argv[2];
-console.log(userChoice);
-console.log(process.argv);
+
+// Analyse user input
+const validChoice = function analyseUserChoice() {
+  if (
+    userChoice === 'Rock' ||
+    userChoice === 'Paper' ||
+    userChoice === 'Scissors'
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 // get random option for computer
 
 const computerChoice = options[Math.floor(Math.random() * options.length)];
@@ -31,4 +43,13 @@ const winner = function whoWins() {
 };
 
 // Final output
-console.log(`You chose ${userChoice}. I chose ${computerChoice}. ${winner()}`);
+function output() {
+  if (!validChoice()) {
+    console.log("No valid input. Please choose 'Rock', 'Paper' or 'Scissors'.");
+  } else {
+    console.log(
+      `You chose ${userChoice}. I chose ${computerChoice}. ${winner()}`
+    );
+  }
+}
+output();

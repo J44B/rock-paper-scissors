@@ -11,13 +11,13 @@ const userChoice = process.argv[2];
 // Analyse user input
 const validChoice = function analyseUserChoice() {
   if (
-    userChoice !== 'Rock' ||
-    userChoice !== 'Paper' ||
-    userChoice !== 'Sccissors'
+    userChoice === 'Rock' ||
+    userChoice === 'Paper' ||
+    userChoice === 'Scissors'
   ) {
-    return "No valid input. Please choose 'Rock, 'Paper' or 'Scissors'.";
-  } else {
     return true;
+  } else {
+    return false;
   }
 };
 
@@ -44,11 +44,12 @@ const winner = function whoWins() {
 
 // Final output
 function output() {
-  if (validChoice === true) {
+  if (!validChoice()) {
+    console.log("No valid input. Please choose 'Rock', 'Paper' or 'Scissors'.");
+  } else {
     console.log(
       `You chose ${userChoice}. I chose ${computerChoice}. ${winner()}`
     );
-  } else {
-    console.log(validChoice);
   }
 }
+output();

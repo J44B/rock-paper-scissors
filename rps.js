@@ -7,8 +7,20 @@ const options = ['Rock', 'Paper', 'Scissors'];
 // Get user input and slice array
 
 const userChoice = process.argv[2];
-console.log(userChoice);
-console.log(process.argv);
+
+// Analyse user input
+function checkUserInput() {
+  // Check for number
+  if (
+    userChoice !== 'Rock' ||
+    userChoice !== 'Paper' ||
+    userChoice !== 'Scissors'
+  ) {
+    return "Your choice is not a valid option. Please choose 'Rock', 'Paper' or 'Scissors'. ";
+  }
+}
+checkUserInput();
+
 // get random option for computer
 
 const computerChoice = options[Math.floor(Math.random() * options.length)];
